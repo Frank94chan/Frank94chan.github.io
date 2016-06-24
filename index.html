@@ -110,9 +110,7 @@
 <p>注：我这里的 <code>-P xxxx</code> 是我修改过的端口号，默认是 22 端口，不加 <code>-P xxxx</code> 参数就是默认</p>
 <p>接下来登录路由器，把 <code>/tmp/openwrt_rsa.pub</code> 的内容添加到 <code>/etc/dropbear/authorized_keys</code> 并修改 <code>authorized_keys</code> 的权限</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /tmp/openwrt_rsa.pub &gt;&gt; /etc/dropbear/authorized_keys</span></span><br><span class="line"><span class="comment"># chmod 600 /etc/dropbear/authorized_keys</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>除了从命令行复制公钥之外，你也可以用文本编辑器，例如 vim 打开 <code>~/.ssh/openwrt_rsa.pub</code> 并且复制里面的所有内容。<br>然后打开路由器的 Web 管理界面，选择 <code>System</code> &gt; <code>Administration</code> ,下拉到底部，在 <code>SSH-Keys</code> 里粘贴你刚刚复制的内容，并取消 <code>Password authentication</code>。</p>
-</blockquote>
+<p>除了从命令行复制公钥之外，你也可以用文本编辑器，例如 vim 打开 <code>~/.ssh/openwrt_rsa.pub</code> 并且复制里面的所有内容。然后打开路由器的 Web 管理界面，选择 <code>System</code> &gt; <code>Administration</code> ,下拉到底部，在 <code>SSH-Keys</code> 里粘贴你刚刚复制的内容，并取消 <code>Password authentication</code>。</p>
 <p>到此，你的路由器应该就取消了密码登录，只能通过密钥来访问了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -p xxxx root@192.168.1.1</span><br></pre></td></tr></table></figure>
 <p>这个就应该是你登录路由器所要输入的命令了。</p>
@@ -124,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" data-id="ciptblo160001adqj5ng0gyx3" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" data-id="cipte6tkw0001jeqjnul740jp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="ciptblo0r0000adqjep3yev6n" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="cipte6tkh0000jeqjr4p9jomj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/22/hello-world/" data-id="ciptblo1b0002adqjoznsefd4" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/22/hello-world/" data-id="cipte6tl10002jeqj53q9l3zq" class="article-share-link">Share</a>
       
       
     </footer>
