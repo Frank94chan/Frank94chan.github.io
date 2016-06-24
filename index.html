@@ -104,7 +104,7 @@
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>一个 SSH 客户端。在 Arch Linux 下可以用 <code>sudo pacman -S openssh</code> 来完成安装。其他 Linux distro 请自行查找相关资料。</p>
 <h2 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h2><h3 id="使用-Linux-上的-OpenSSH-客户端"><a href="#使用-Linux-上的-OpenSSH-客户端" class="headerlink" title="使用 Linux 上的 OpenSSH 客户端"></a>使用 Linux 上的 OpenSSH 客户端</h3><p>open a terminal and type:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa <span class="_">-f</span> ~/.ssh/openwrt_rsa</span><br></pre></td></tr></table></figure>
-<p>刚刚这条命令会在 <code>$HOME/.ssh/</code> 下生成一个加密算法为 rsa 的密钥对，一个公钥 <code>openwrt_rsa.pub</code> ，一个密钥 <code>openwrt_rsa</code> 。</p>
+<p>刚刚这条命令会在 <code>$HOME/.ssh/</code> 下生成一个加密算法为 rsa 的密钥对，一个公钥 <code>openwrt_rsa.pub</code> ，一个私钥 <code>openwrt_rsa</code> 。</p>
 <p>然后用 SCP 命令把公钥传到 Openwrt 的 /tmp 目录下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp -P xxxx ~/.ssh/openwrt_rsa.pub root@192.168.1.1:/tmp</span><br></pre></td></tr></table></figure>
 <p>注：我这里的 <code>-P xxxx</code> 是我修改过的端口号，默认是 22 端口，不加 <code>-P xxxx</code> 参数就是默认</p>
@@ -122,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" data-id="cipte6tkw0001jeqjnul740jp" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" data-id="ciptebh470001omqjfqiqsdw1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="cipte6tkh0000jeqjr4p9jomj" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="ciptebh3s0000omqjfa06ovh3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/22/hello-world/" data-id="cipte6tl10002jeqj53q9l3zq" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/22/hello-world/" data-id="ciptebh4e0002omqjk4tmj0ps" class="article-share-link">Share</a>
       
       
     </footer>
