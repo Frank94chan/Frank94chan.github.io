@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Enable Public Key Authentication on Openwrt | Frank94chan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简单记录一下步骤，废话没什么好说的。照着官方 Wiki来的，可以当成我的翻译和精简版。
+Dropbear 启用公钥验证为什么启用公钥验证
+你无需手动输入密码
+登录更方便
+别人更少机会从你输入密码的手指动作看到你的密码
+更容易执行一些类似 SCP 或者其他的远程命令
+密码不再被加密传到 Openwrt
+降低被窃听者窃取密码的可能性
+允许你关闭密码验证
+攻击者没有可能通过猜你的密码来登录 Openwr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Enable Public Key Authentication on Openwrt">
+<meta property="og:url" content="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/index.html">
+<meta property="og:site_name" content="Frank94chan's blog">
+<meta property="og:description" content="简单记录一下步骤，废话没什么好说的。照着官方 Wiki来的，可以当成我的翻译和精简版。
+Dropbear 启用公钥验证为什么启用公钥验证
+你无需手动输入密码
+登录更方便
+别人更少机会从你输入密码的手指动作看到你的密码
+更容易执行一些类似 SCP 或者其他的远程命令
+密码不再被加密传到 Openwrt
+降低被窃听者窃取密码的可能性
+允许你关闭密码验证
+攻击者没有可能通过猜你的密码来登录 Openwr">
+<meta property="og:updated_time" content="2016-06-24T07:02:11.014Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Enable Public Key Authentication on Openwrt">
+<meta name="twitter:description" content="简单记录一下步骤，废话没什么好说的。照着官方 Wiki来的，可以当成我的翻译和精简版。
+Dropbear 启用公钥验证为什么启用公钥验证
+你无需手动输入密码
+登录更方便
+别人更少机会从你输入密码的手指动作看到你的密码
+更容易执行一些类似 SCP 或者其他的远程命令
+密码不再被加密传到 Openwrt
+降低被窃听者窃取密码的可能性
+允许你关闭密码验证
+攻击者没有可能通过猜你的密码来登录 Openwr">
+  
+    <link rel="alternate" href="/atom.xml" title="Frank94chan&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Frank94chan&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">What I&#39;ve learned, What I&#39;ll write.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://frank94chan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Enable-Public-Key-Authentication-on-Openwrt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" class="article-date">
+  <time datetime="2016-06-24T04:17:24.000Z" itemprop="datePublished">2016-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Enable Public Key Authentication on Openwrt
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简单记录一下步骤，废话没什么好说的。照着官方 <a href="https://wiki.openwrt.org/oldwiki/dropbearpublickeyauthenticationhowto" target="_blank" rel="external">Wiki</a>来的，可以当成我的翻译和精简版。</p>
+<h1 id="Dropbear-启用公钥验证"><a href="#Dropbear-启用公钥验证" class="headerlink" title="Dropbear 启用公钥验证"></a>Dropbear 启用公钥验证</h1><h2 id="为什么启用公钥验证"><a href="#为什么启用公钥验证" class="headerlink" title="为什么启用公钥验证"></a>为什么启用公钥验证</h2><ol>
+<li>你无需手动输入密码</li>
+<li>登录更方便</li>
+<li>别人更少机会从你输入密码的手指动作看到你的密码</li>
+<li>更容易执行一些类似 <code>SCP</code> 或者其他的远程命令</li>
+<li>密码不再被加密传到 Openwrt</li>
+<li>降低被窃听者窃取密码的可能性</li>
+<li>允许你关闭密码验证</li>
+<li>攻击者没有可能通过猜你的密码来登录 Openwrt</li>
+</ol>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>一个 SSH 客户端。在 Arch Linux 下可以用 <code>sudo pacman -S openssh</code> 来完成安装。其他 Linux distro 请自行查找相关资料。</p>
+<h2 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h2><h3 id="使用-Linux-上的-OpenSSH-客户端"><a href="#使用-Linux-上的-OpenSSH-客户端" class="headerlink" title="使用 Linux 上的 OpenSSH 客户端"></a>使用 Linux 上的 OpenSSH 客户端</h3><p>open a terminal and type:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa <span class="_">-f</span> ~/.ssh/openwrt_rsa</span><br></pre></td></tr></table></figure>
+<p>刚刚这条命令会在 <code>$HOME/.ssh/</code> 下生成一个加密算法为 rsa 的密钥对，一个公钥 <code>openwrt_rsa.pub</code> ，一个密钥 <code>openwrt_rsa</code> 。</p>
+<p>然后用 SCP 命令把公钥传到 Openwrt 的 /tmp 目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp -P xxxx ~/.ssh/openwrt_rsa.pub root@192.168.1.1:/tmp</span><br></pre></td></tr></table></figure>
+<p>注：我这里的 <code>-P xxxx</code> 是我修改过的端口号，默认是 22 端口，不加 <code>-P xxxx</code> 参数就是默认</p>
+<p>接下来登录路由器，把 <code>/tmp/openwrt_rsa.pub</code> 的内容添加到 <code>/etc/dropbear/authorized_keys</code> 并修改 <code>authorized_keys</code> 的权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /tmp/openwrt_rsa.pub &gt;&gt; /etc/dropbear/authorized_keys</span></span><br><span class="line"><span class="comment"># chmod 600 /etc/dropbear/authorized_keys</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>除了从命令行复制公钥之外，你也可以用文本编辑器，例如 vim 打开 <code>~/.ssh/openwrt_rsa.pub</code> 并且复制里面的所有内容。<br>然后打开路由器的 Web 管理界面，选择 <code>System</code> &gt; <code>Administration</code> ,下拉到底部，在 <code>SSH-Keys</code> 里粘贴你刚刚复制的内容，并取消 <code>Password authentication</code>。</p>
+</blockquote>
+<p>到此，你的路由器应该就取消了密码登录，只能通过密钥来访问了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -p xxxx root@192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>这个就应该是你登录路由器所要输入的命令了。</p>
+<p>如果你觉得这个命令还是比较长，那么你可以新建一个 <code>~/.ssh/config</code> 文件，格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Openwrt						#这是注释</span></span><br><span class="line">Host openwrt						<span class="comment">#用于 ssh 登录的替代名字</span></span><br><span class="line">Hostname 192.168.1.1					<span class="comment">#你路由器的地址</span></span><br><span class="line">Port xxxx						<span class="comment">#ssh 使用的端口，默认是 22</span></span><br><span class="line">IdentityFile ~/.ssh/openwrt_rsa				<span class="comment">#私钥所在的位置</span></span><br><span class="line">User root						<span class="comment">#ssh 登录使用的用户名</span></span><br></pre></td></tr></table></figure>
+<p>这样，在终端输入 <code>ssh openwrt</code> 就等价与 <code>ssh -p xxxx root@192.168.1.1</code></p>
+<p>到这里，我的教程也写完了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://frank94chan.github.io/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" data-id="ciptblo160001adqj5ng0gyx3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/22/Arch-Linux-install-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Arch Linux install tutorial</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/">Enable Public Key Authentication on Openwrt</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/Arch-Linux-install-tutorial/">Arch Linux install tutorial</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Frank Chan<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

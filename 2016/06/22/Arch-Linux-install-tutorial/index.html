@@ -7,44 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这是我自己在 Asus 笔记本上安装 Arch Linux 的过程记录。参考资料来源于 Arch 官方 Wiki
 安装步骤准备材料
-
 可用的网络
 Arch Linux 最新版的 ISO 一份
 至少4 GB 的 U盘一个
 Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd 命令即可。
 支持 UEFI 启动的笔记本一个
 
-
-第一步：制作启动盘从官方网站，也可以是从国">
+第一步：制作启动盘从官方网站，也可以是从国内各">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Arch Linux install tutorial">
 <meta property="og:url" content="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/index.html">
 <meta property="og:site_name" content="Frank94chan's blog">
 <meta property="og:description" content="这是我自己在 Asus 笔记本上安装 Arch Linux 的过程记录。参考资料来源于 Arch 官方 Wiki
 安装步骤准备材料
-
 可用的网络
 Arch Linux 最新版的 ISO 一份
 至少4 GB 的 U盘一个
 Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd 命令即可。
 支持 UEFI 启动的笔记本一个
 
-
-第一步：制作启动盘从官方网站，也可以是从国">
-<meta property="og:updated_time" content="2016-06-22T14:11:39.687Z">
+第一步：制作启动盘从官方网站，也可以是从国内各">
+<meta property="og:updated_time" content="2016-06-24T05:50:15.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Arch Linux install tutorial">
 <meta name="twitter:description" content="这是我自己在 Asus 笔记本上安装 Arch Linux 的过程记录。参考资料来源于 Arch 官方 Wiki
 安装步骤准备材料
-
 可用的网络
 Arch Linux 最新版的 ISO 一份
 至少4 GB 的 U盘一个
 Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd 命令即可。
 支持 UEFI 启动的笔记本一个
 
-
-第一步：制作启动盘从官方网站，也可以是从国">
+第一步：制作启动盘从官方网站，也可以是从国内各">
   
     <link rel="alternate" href="/atom.xml" title="Frank94chan&#39;s blog" type="application/atom+xml">
   
@@ -120,15 +114,13 @@ Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd �
     <div class="article-entry" itemprop="articleBody">
       
         <p>这是我自己在 Asus 笔记本上安装 <a href="https://www.archlinux.org/" target="_blank" rel="external">Arch Linux</a> 的过程记录。参考资料来源于 Arch 官方 <a href="wiki.archlinux.org/index.php/installation_guide">Wiki</a></p>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><blockquote>
-<ul>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h3><ul>
 <li>可用的网络</li>
 <li>Arch Linux 最新版的 ISO 一份</li>
 <li>至少4 GB 的 U盘一个</li>
 <li>Windows 下安装 <a href="https://rufus.akeo.ie" target="_blank" rel="external">Rufus</a> 作为制作 U盘启动盘的工具，Linux 下用 dd 命令即可。</li>
 <li>支持 UEFI 启动的笔记本一个</li>
 </ul>
-</blockquote>
 <h3 id="第一步：制作启动盘"><a href="#第一步：制作启动盘" class="headerlink" title="第一步：制作启动盘"></a>第一步：制作启动盘</h3><p>从<a href="https://www.archlinux.org/download" target="_blank" rel="external">官方网站</a>，也可以是从国内各大镜像站，例如<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/" target="_blank" rel="external">清华开源镜像站</a>下载最新版的镜像，应选择最新版的镜像下载。下载完毕后，推荐验证一下文件的完整性，Download 列表最下方应该提供了 md5sums.txt 和 sha256sums.txt 这两个文件，Windows 下 7-zip 可以提供文件校验，Linux 下自带 md5sum 和 sha256sum 这两个命令。</p>
 <p>文件校验完成之后，Windows 用户打开我刚说的 Rufus 选择要写入镜像的 U盘和镜像，分区方案选择 <em>UEFI</em> 和 <em>GPT分区</em>，确认这三个选项没有问题之后可以点击 <em>开始</em>，等待完成即可。</p>
 <p>Linux 用户在终端下操作即可：</p>
@@ -139,35 +131,30 @@ Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd �
 <p>到这里，供 UEFI 电脑启动的启动盘就做好了。</p>
 <h3 id="第二步：进入启动盘并安装基本系统"><a href="#第二步：进入启动盘并安装基本系统" class="headerlink" title="第二步：进入启动盘并安装基本系统"></a>第二步：进入启动盘并安装基本系统</h3><p>重启电脑，进入 Bios，选择从 U盘启动。没有问题的话，你现在应该看到一个黑色的背景上有几个选项，进入第一个即可。闪过几页系统启动日志，Live CD 会自动以 root 身份登录，从现在开始，你将亲手打造自己的 Arch Linux。</p>
 <h4 id="系统分区并挂载"><a href="#系统分区并挂载" class="headerlink" title="系统分区并挂载"></a>系统分区并挂载</h4><p>我的硬盘组合是120GB SSD + 500GB HDD，我给自己的分区方案是：</p>
-<blockquote>
 <ul>
 <li>SSD 500MB EFI 分区 /boot</li>
 <li>剩下的作为根分区 /</li>
 <li>HDD 6GB 做 Swap 分区</li>
 <li>剩下的做家分区 /home</li>
 </ul>
-</blockquote>
 <p>具体命令行操作是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gdisk /dev/sdxY		#o 创建新分区表，n 新建分区，w 保存分区信息</span></span><br><span class="line"><span class="comment"># mkfs.vfat /dev/sdxY		#vfat 格式化 EFI 分区</span></span><br><span class="line"><span class="comment"># mkfs.ext4 /dev/sdxY		#ext4 格式化其余分区</span></span><br><span class="line"><span class="comment"># mount /dev/sdxY /mnt		#挂载根分区</span></span><br><span class="line"><span class="comment"># mkdir -p /mnt/&#123;boot,home&#125;	#创建 boot 和 home 目录</span></span><br><span class="line"><span class="comment"># mount /dev/sdxY /mnt/boot</span></span><br><span class="line"><span class="comment"># mount /dev/sdxY /mnt/home	#挂载 boot 和 home</span></span><br><span class="line"><span class="comment"># mkswap /dev/sdxY &amp;&amp; swapon /dev/sdxY	创建交换分区</span></span><br></pre></td></tr></table></figure>
 <p>经过以上命令，你的硬盘应该有了４个分区：</p>
-<blockquote>
 <ul>
-<li>/boot,    500MB</li>
-<li>/mnt,</li>
-<li>/home,</li>
-<li>swap,    6BG</li>
+<li>/boot，对应/dev/sda1</li>
+<li>/mnt，对应 /dev/sda2</li>
+<li>/home，对应 /dev/sdb2</li>
+<li>swap，对应 /dev/sdb1</li>
 </ul>
-</blockquote>
-<p>可以通过 lsblk 查看当前的分区信息</p>
+<p>可以通过 <code>lsblk</code> 查看当前的分区信息</p>
 <h4 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h4><p>默认系统网络是有线连接，如果只有无线网络，那么需要使用 wifi-menu 来连接网络</p>
-<p>修改系统更新源列表：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nano /etc/pacman.d/mirrorlist		#Ctrl+k 删除一整行，保留 China 的即可</span></span><br><span class="line"><span class="comment"># pacman -Syy				#更新数据库</span></span><br><span class="line"><span class="comment"># pacstrap -i /mnt base base-devel net-tools bash-completion #安装基本系统</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nano /etc/pacman.d/mirrorlist		#Ctrl+k 剪切一整行，保留 China 的即可</span></span><br><span class="line"><span class="comment"># pacman -Syy				#更新数据库</span></span><br><span class="line"><span class="comment"># pacstrap -i /mnt base base-devel net-tools bash-completion #安装基本系统</span></span><br></pre></td></tr></table></figure>
 <p>注：net-tools 是一系列基本网络工具，bash-completion 是 bash 命令自动补全</p>
 <p>生成fstab:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span></span><br></pre></td></tr></table></figure>
 <p>进入新系统：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># arch-chroot /mnt /bin/bash</span></span><br><span class="line"><span class="comment"># alias ls='ls --color'		#让 ls 命令彩色输出</span></span><br><span class="line"><span class="comment"># echo HOSTNAME &gt; /etc/hostname	#HOSTNAME 随便你写啥，这是你的主机名字</span></span><br><span class="line"><span class="comment"># ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime #设置时区</span></span><br><span class="line"><span class="comment"># nano /etc/locale.gen		#取消掉 en_US 和 zh_CN 前面的“#”</span></span><br><span class="line"><span class="comment"># echo LANG=en_US.UTF-8 &gt; /etc/locale.conf	#我这里设置英文为我的系统语言，不推荐设置成中文</span></span><br><span class="line"><span class="comment"># echo KEYMAP=us &gt;&gt; /etc/vconsole.conf</span></span><br><span class="line"><span class="comment"># echo FONT= &gt;&gt; /etc/vconsole.conf</span></span><br><span class="line"><span class="comment"># pacman -S iw dialog wpa_supplicant	#配置网络</span></span><br><span class="line"><span class="comment"># passwd				#配置 root 用户密码</span></span><br><span class="line"><span class="comment"># useradd -m -G wheel,users -s /bin/bash USERNAME	#添加新用户，USERNAME 自己改</span></span><br><span class="line"><span class="comment"># passwd USERNAME			#配置新用户的密码</span></span><br><span class="line"><span class="comment"># pacman -S efibootmgr dosfstools</span></span><br><span class="line"><span class="comment"># bootctl install			#安装 Systemd-boot 作为启动引导</span></span><br></pre></td></tr></table></figure>
-<p>注意：安装完 Systemd-boot 之后，需要修改 /boot/loader/loader.conf 和 /boot/loader/entries/arch.conf 两个文件。具体信息可以查看相关 <a href="https://wiki.archlinux.org/index.php/Systemd-boot" target="_blank" rel="external">wiki</a>。</p>
+<p>注意：安装完 Systemd-boot 之后，需要修改 <code>/boot/loader/loader.conf</code> 和 <code>/boot/loader/entries/arch.conf</code> 两个文件。具体信息可以查看相关 <a href="https://wiki.archlinux.org/index.php/Systemd-boot" target="_blank" rel="external">wiki</a>。</p>
 <p>退出 chroot，重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># exit</span></span><br><span class="line"><span class="comment"># umount -R /mnt</span></span><br><span class="line"><span class="comment"># reboot</span></span><br></pre></td></tr></table></figure></p>
 <p>恭喜，到现在为止，Arch Linux 最基本的系统安装完毕！</p>
 <h3 id="安装图形界面和其他软件"><a href="#安装图形界面和其他软件" class="headerlink" title="安装图形界面和其他软件"></a>安装图形界面和其他软件</h3><p>假如你重启进入新系统发现没有网络，需要以 root 身份运行 dhcpcd 或者 wifi-menu 来获得网络连接。</p>
@@ -176,13 +163,13 @@ Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd �
 <p>赋予你创建的 USERNAME 用户以 sudo 权限：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nano /etc/sudoers		#取消 # %wheel ALL=(ALL) ALL 的注释"#"</span></span><br></pre></td></tr></table></figure>
 <p>安装图形界面及相关软件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br><span class="line">$ sudo pacman -S xorg-&#123;server,utils,xinit,server-utils&#125;</span><br><span class="line">$ sudo pacman -S xf86-input-synaptics </span><br><span class="line">$ sudo pacman -S xf86-video-intel	<span class="comment">#这个驱动根据自己显卡来装</span></span><br><span class="line">$ sudo pacman -S i3 lightdm-gtk-greeter-settings networkmanager network-manager-applet</span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> lightdm</span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> NetworkManager</span><br><span class="line">$ sudo pacman -S p7zip zip unzip unrar ntfs-3g </span><br><span class="line">$ sudo pacman -S wget aria2 curl git </span><br><span class="line">$ sudo pacman -S gnome-terminal lxappearance</span><br><span class="line">$ sudo pacman -S firefox flashplugin</span><br><span class="line">$ sudo pacman -S shadowsocks ntp </span><br><span class="line">$ sudo pacman -S thunar thunar-&#123;media-tags-plugin,volman,archive-plugin&#125;</span><br><span class="line">$ sudo pacman -S wqy-microhei noto-fonts</span><br><span class="line">$ sudo pacman -S fcitx-im fcitx-rime fcitx-configtool	<span class="comment">#fcitx输入法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -Syy</span><br><span class="line">$ sudo pacman -S xorg-&#123;server,utils,xinit,server-utils&#125;	<span class="comment">#安装桌面必备软件</span></span><br><span class="line">$ sudo pacman -S xf86-input-synaptics			<span class="comment">#安装触摸板驱动</span></span><br><span class="line">$ sudo pacman -S xf86-video-intel			<span class="comment">#这个驱动根据自己显卡来装</span></span><br><span class="line">$ sudo pacman -S i3 lightdm-gtk-greeter-settings	<span class="comment">#安装显示管理器及修改其设置的软件</span></span><br><span class="line">$ sudo pacman -S networkmanager network-manager-applet	<span class="comment">#安装网络管理</span></span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> lightdm				<span class="comment">#设置开机自启动</span></span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> NetworkManager			</span><br><span class="line">$ sudo pacman -S p7zip zip unzip unrar ntfs-3g </span><br><span class="line">$ sudo pacman -S wget aria2 curl git </span><br><span class="line">$ sudo pacman -S gnome-terminal 			<span class="comment">#安装 Gnome 终端</span></span><br><span class="line">$ sudo pacman -S lxappearance				<span class="comment">#桌面美化工具</span></span><br><span class="line">$ sudo pacman -S firefox flashplugin chromium		<span class="comment">#安装火狐和 chromium 浏览器</span></span><br><span class="line">$ sudo pacman -S shadowsocks				<span class="comment">#安装 SS</span></span><br><span class="line">$ sudo pacman -S thunar thunar-&#123;media-tags-plugin,volman,archive-plugin&#125;	<span class="comment">#安装文件管理器及其插件</span></span><br><span class="line">$ sudo pacman -S xarchiver				<span class="comment">#安装解压管理软件</span></span><br><span class="line">$ sudo pacman -S wqy-microhei				<span class="comment">#安装中文字体</span></span><br><span class="line">$ sudo pacman -S fcitx-im fcitx-rime fcitx-configtool	<span class="comment">#fcitx输入法</span></span><br></pre></td></tr></table></figure>
 <p>好的，现在重启，你将进入 i3wm “丑陋”的界面中，我会在下一篇文章中写在 i3wm 下对 Arch Linux 进行美化。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="cipqylaze0000j2qjca4q62dw" class="article-share-link">Share</a>
+      <a data-url="https://frank94chan.github.io/2016/06/22/Arch-Linux-install-tutorial/" data-id="ciptblo0r0000adqjep3yev6n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,6 +177,15 @@ Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd �
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Enable Public Key Authentication on Openwrt
+        
+      </div>
+    </a>
   
   
     <a href="/2016/06/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -229,6 +225,10 @@ Windows 下安装 Rufus 作为制作 U盘启动盘的工具，Linux 下用 dd �
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/24/Enable-Public-Key-Authentication-on-Openwrt/">Enable Public Key Authentication on Openwrt</a>
+          </li>
         
           <li>
             <a href="/2016/06/22/Arch-Linux-install-tutorial/">Arch Linux install tutorial</a>
